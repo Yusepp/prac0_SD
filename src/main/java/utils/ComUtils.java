@@ -2,8 +2,8 @@ package utils;
 
 import java.io.*;
 
-public class ComUtils {
-    private final int STRSIZE = 40;
+public class    ComUtils {
+    private final int STRSIZE = 20;
 
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
