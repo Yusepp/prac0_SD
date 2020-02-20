@@ -153,6 +153,24 @@ public class    ComUtils {
         dataOutputStream.writeBytes(str);
     }
 
+    public char readChar() throws  IOException{
+        byte[] b = read_bytes(1);
+        return (char)b[0];
+    }
+
+    public void writeChar(String data) throws IOException{
+        // Creem una seqüència amb la mida
+        // Enviem l'string writeBytes de DataOutputStrem no envia el byte més alt dels chars.
+        if (data.length() == 1){
+            dataOutputStream.writeBytes(data);
+        }
+        else {
+            dataOutputStream.close();//make 1 func
+            dataInputStream.close();
+            throw new IOException("Not 1 char");
+        }
+    }
+
     public enum Endianness {
         BIG_ENNDIAN,
         LITTLE_ENDIAN
